@@ -1,0 +1,379 @@
+---
+
+---
+
+<div class="leadSection">
+    <div class="main">
+        <h1>Was ist ihr Anliegen?</h1>
+        <form id="leadForm">
+            <div class="form-step active" id="step-1"> <!--financeType-->
+                <div class="grid-container">
+                    <label class="grid-element card card" for="Immobilienkauf">
+                        Immobilienkauf <input type="radio" id="Immobilienkauf" name="financeType" value="Immobilienkauf" required>
+                    </label>
+
+                    <label class="grid-element card card" for="Modernisierung">
+                        Modernisierung <input type="radio" id="Modernisierung" name="financeType" value="Modernisierung">
+                    </label>
+
+                    <label class="grid-element card card" for="Kredit">
+                        Kredit zur freien Verfügung <input type="radio" id="Kredit" name="financeType" value="Kredit zur freien Verfügung">
+                    </label>
+
+                    <label class="grid-element card card" for="Immobilienverkauf">
+                        Immobilienverkauf <input type="radio" id="Immobilienverkauf" name="financeType" value="Immobilienverkauf">
+                    </label>
+
+                    <label class="grid-element card card" for="Neubauvorhaben">
+                        Neubauvorhaben <input type="radio" id="Neubauvorhaben" name="financeType" value="Neubauvorhaben">
+                    </label>
+
+                    <label class="grid-element card card" for="Sonstiges">
+                        Sonstiges <input type="radio" id="Sonstiges" name="financeType" value="Sonstiges">
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-step" id="step-2"><!--objectType-->
+
+                <div class="grid-container">
+                    <label class="grid-element card card" for="Eigentumswohnung">
+                        Eigentumswohnung <input type="radio" id="Eigentumswohnung" name="objectType" value="Eigentumswohnung" required>
+                    </label>
+
+                    
+                    <label class="grid-element card" for="Einfamilienhaus">
+                        Einfamilienhaus <input type="radio" id="Einfamilienhaus" name="objectType" value="Einfamilienhaus">
+                    </label>
+
+                    
+                    <label class="grid-element card" for="Mehrfamilienhaus">
+                        Mehrfamilienhaus <input type="radio" id="Mehrfamilienhaus" name="objectType" value="Mehrfamilienhaus">
+                    </label>
+
+                    
+                    <label class="grid-element card" for="Geschäftshaus">
+                        Wohn- und Geschäftshaus <input type="radio" id="Geschäftshaus" name="objectType" value="Wohn- und Geschäftshaus">
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-step" id="step-3"><!--objectAge-->
+                <div class="grid-container">
+                    
+                    <label class="grid-element card" for="Bestandsimmobilie">
+                        Bestandsimmobilie <input type="radio" id="Bestandsimmobilie" name="objectAge" value="Bestandsimmobilie" required>
+                    </label>
+
+                    
+                    <label class="grid-element card" for="Neubau">
+                        Neubau / Erstbezug <input type="radio" id="Neubau" name="objectAge" value="Neubau / Erstbezug">
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-step" id="step-4"><!--useCase-->
+                <div class="grid-container">
+                    
+                    <label class="grid-element card" for="Selbstbewohnt">
+                        Selbstbewohnt <input type="radio" id="Selbstbewohnt" name="useCase" value="Selbstbewohnt" required>
+                    </label>
+
+                    
+                    <label class="grid-element card" for="Vermietet">
+                        Vermietet <input type="radio" id="Vermietet" name="useCase" value="Vermietet">
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-step" id="step-5"><!--plz-->
+                <label for="plz">PLZ des Objekts</label>
+                <input type="text" id="plz" name="plz" inputmode="numeric" minlength="5" maxlength="5" required>
+            </div>
+
+            <div class="form-step" id="step-6"><!--property, livingArea-->
+                <div>
+                    <label for="property">Grundstück (qm)</label>
+                    <input type="number" id="property" name="property" required>
+                </div>
+
+                <div>
+                    <label for="livingArea">Wohnfläche (qm)</label>
+                    <input type="number" id="livingArea" name="livingArea" required>
+                </div>
+            </div>
+
+            <div class="form-step" id="step-7"><!--status-->
+                <div class="grid-container">
+                    
+                    <label class="grid-element card" for="ObjektGefunden">
+                        Objekt gefunden <input type="radio" id="ObjektGefunden" name="status" value="Objekt gefunden" required>
+                    </label>
+
+                    
+                    <label class="grid-element card" for="EntscheidungGefallen">
+                        Entscheidung gefallen <input type="radio" id="EntscheidungGefallen" name="status" value="Entscheidung gefallen">
+                    </label>
+
+                    
+                    <label class="grid-element card" for="NotarterminGeplant">
+                        Notartermin geplant <input type="radio" id="NotarterminGeplant" name="status" value="Notartermin geplant">
+                    </label>
+
+                    
+                    <label class="grid-element card" for="Objektsuche">
+                        noch auf Objektsuche <input type="radio" id="Objektsuche" name="status" value="noch auf Objektsuche">
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-step" id="step-8"><!--borrower-->
+                <div class="grid-container">
+                    
+                    <label class="grid-element card" for="OnePerson">
+                        1 Person <input type="radio" id="OnePerson" name="borrower" value="1 Person" required>
+                    </label>
+
+                    
+                    <label class="grid-element card" for="TwoPerson">
+                        2 Personen <input type="radio" id="TwoPerson" name="borrower" value="2 Personen">
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-step" id="step-9"><!--?-->
+
+            </div>
+
+            <div class="form-step" id="step-10"><!--firstName, lastName, phone, email, householdIncome, employment-->
+                <div>
+                    <label for="firstName">Vorname</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+
+                <div>
+                    <label for="lastName">Nachname</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+
+                <div>
+                    <label for="phone">Telefonnummer</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div>
+                    <label for="email">E-mail Adresse</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div>
+                    <label for="householdIncome">Monatliches Haushaltsnettoeinkommen (&euro;)</label>
+                    <input type="number" id="householdIncome" name="householdIncome" required>
+                </div>
+
+                <div>
+                    <label for="">Art der Beschäftigung</label>
+                    <select name="employment" id="employment" required>
+                        <option value="Angestellter/Angestellte">   Angestellter/Angestellte</option>
+                        <option value="Beamter/Beamte">             Beamter/Beamte</option>
+                        <option value="Selbstständiger">            Selbstständiger</option>
+                        <option value="Rentner">                    Rentner</option>
+                        <option value="Sonstiges">                  Sonstiges</option>
+                    </select>
+                </div>
+            </div>
+            
+
+            <div class="form-step" id="step-submit"><!--?-->
+                <div class="btn-row">
+                    <button type="submit">Abschicken</button>
+                </div>
+            </div>
+
+            <div class="form-step" id="step-confirm"><!--?-->
+                <h1>THANKSSS</h1>
+            </div>
+        </form>
+
+        <div class="btn-row">
+            <button type="button" id="returnButton">Zurück</button>
+            <button type="button" id="nextButton">Weiter</button>
+        </div>
+    </div>
+</div>
+
+<style>
+.leadSection {
+background-color: var(--blue);
+padding: 40px 0px;
+
+display: flex;
+justify-content: center;
+gap: 100px;
+}
+
+.main{
+    background-color: var(--white);
+    color: var(--black);
+    text-align: center;
+
+    border: solid 1px var(--white);
+    border-radius: 40px;
+
+    display: flex;
+    flex-direction: column;
+    flex-basis: 750px;
+    height: 400px;
+}
+
+h1 {
+    flex-basis: 38px;
+}
+
+form {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* between Step styling */
+
+.form-step {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+/*  */
+
+.grid-container {
+    padding: 0px 50px;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+}
+
+.grid-element:has(input[type="radio"]:checked) {
+    border: var(--black) 2px solid;
+}
+
+.card {
+    background-color: var(--white);
+    color: var(--black);
+    border: var(--grey) solid 2px;
+    border-radius: 20px;
+    height: 80px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: border 100ms;
+}
+
+.card:hover {
+    border: var(--black) solid 2px;
+}
+
+.card:active {
+    background-color: var(--grey);
+}
+
+input[type="radio"] {
+    appearance: none;
+}
+
+
+.disabled {
+    opacity: 50%;
+}
+
+.enabled{
+    opacity: 100%;
+}
+
+/* Button Row */
+
+.btn-row {
+    display: flex;
+    justify-content: space-evenly;
+
+    flex-basis: 60px;
+}
+
+button {
+    background-color: var(--orange);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+
+    width: 90px;
+    height: 40px;
+
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+
+    cursor: pointer;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 20px;
+    max-width: 480px;
+    min-height: 40px;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+}
+
+button:hover,
+button:focus {
+    background-color: #C5660F;
+    color: var(--white);
+}
+
+button:active {
+    background: #AD560C;
+    color: rgb(255, 255, 255, .7);
+}
+
+
+button:disabled {
+    cursor: not-allowed;
+    background: rgba(0, 0, 0, .08);
+    color: rgba(0, 0, 0, .3);
+}
+
+
+
+</style>
+
+<script>
+    import "./LeadSection.js";
+</script>
+
+<script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+
+<script type="text/javascript">
+(function(){
+    emailjs.init({
+        publicKey: "vRQmmI-sTP8fRMZUj",
+    });
+})();
+</script>

@@ -1,0 +1,115 @@
+---
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<header>
+            <div class="logo">
+                <a href="index.html">LOGO</a>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="">Element</a></li>
+                    <li><a href="">Element</a></li>
+                    <li><a href="">Element</a></li>
+                    <li><a href="">Element</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <slot></slot>
+
+        <footer>
+            <small>
+                Copyright © 2023 Football History Archives. All Rights Reserved.
+            </small>
+
+            <nav class="cookies">
+                <ul>
+                    <li><a href="impressum.html">Impressum</a></li>
+                    <li>Datenschutz</li>
+                    <li>AGB</li>
+                    <li>Barrierefreiheit</li>
+                    <li>copyright</li>
+                </ul>
+            </nav>
+
+            <nav class="socials">
+                <ul>
+                    <li>Insta</li>
+                    <li>blabla</li>
+                </ul>
+            </nav>
+        </footer>
+	</body>
+</html>
+
+<style>
+    header {
+        display: flex;
+        background-color: var(--white);
+        color: var(--black);
+        align-items: center;
+        justify-content:space-evenly;
+        padding: 32px 0px;
+        border-bottom: 2px solid var(--grey);
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    .logo img {
+        height: 45px;
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+        gap: 60px;
+        margin: 0px;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    footer {
+        display: flex;
+        background-color: var(--blue);
+        color: var(--white);
+        align-items: center;
+        justify-content:space-evenly;
+        padding: 32px 0px;
+        border-top: 2px solid var(--grey);
+    }
+</style>
+
+<style is:global>
+    :root {
+        --black: #000;
+        --white: #fff;
+        --grey: #f0f0f0;
+
+        --blue: #1F3667;
+        --orange: #DD7513;
+    }
+
+    body {
+        margin: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+</style>

@@ -12,6 +12,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@emailjs/browser": "^5.0.2",
     "astro": "^7.3.5"
   },
   "allowScripts": {

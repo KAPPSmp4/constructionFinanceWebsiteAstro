@@ -1,5 +1,8 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroSection from "../components/HeroSection.astro";
+import LeadSection from "../components/LeadSection.astro"
+import ReviewCarousel from "../components/ReviewCarousel.astro";
 ---
 
 <html lang="en">
@@ -9,9 +12,20 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Baufinanz Lombardo</title>
 	</head>
+
 	<body>
-		<h1>Astro</h1>
+		<BaseLayout>
+			
+			<HeroSection></HeroSection>
+
+			<LeadSection></LeadSection>
+
+			<HeroSection></HeroSection>
+
+			<ReviewCarousel></ReviewCarousel>
+			
+		</BaseLayout>
 	</body>
 </html>

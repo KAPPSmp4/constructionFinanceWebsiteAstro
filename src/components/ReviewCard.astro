@@ -1,0 +1,107 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
+
+interface Props {
+    review: CollectionEntry<"reviews">
+}
+
+const { review } = Astro.props;
+const { Content } = await render(review)
+---
+
+<div class="review-card">
+    <div class="heading">
+        <img src={ review.data.profile_picture } alt="profile picture">
+
+        <div class="header-info">
+            <p class="author">{ review.data.author }</p>
+            <p class="date">{ review.data.date }</p>
+        </div>
+
+        <div class="google">
+            <img src="public/icons/google_logo.webp" alt="google logo">
+        </div>
+    </div>
+
+    <div class="rating">
+        <img src="public/icons/star.png" alt="star">
+        <img src="public/icons/star.png" alt="star">
+        <img src="public/icons/star.png" alt="star">
+        <img src="public/icons/star.png" alt="star">
+        <img src="public/icons/star.png" alt="star">
+    </div>
+
+    <div class="content">
+        <p><Content /></p>
+    </div>
+</div>
+
+<style>
+    .review-card {
+        width: 280px;
+        background-color: var(--white);
+        max-height: 400px;
+
+        border: 0;
+        border-radius: 24px;
+
+        padding: 16px;
+        overflow: hidden;
+    }
+
+    .heading {
+        display: flex;
+
+    }
+
+    .header-info {
+        flex: 1;
+        height: 50px;
+        padding-left: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .author {
+        font-size: large;
+        font-weight: 600;
+    }
+
+    .date {
+        color: grey;
+    }
+
+    .rating {
+        display: flex;
+        gap: 2px;
+        padding: 8px 0px;
+    }
+
+    .rating img{
+        width: auto;
+        height: 16px;
+    }
+
+    .content {
+
+    }
+
+    img {
+        width: auto;
+        height: 48px;
+    }
+
+    .google {
+        height: 38px;
+    
+    }
+
+    .google img{
+        height: 100%;
+    
+    }
+
+
+</style>
