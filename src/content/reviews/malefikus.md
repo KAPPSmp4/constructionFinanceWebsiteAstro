@@ -1,6 +1,6 @@
 ---
 author: Malefikus
-date: qew
+date: 30/09/2026
 profile_picture: public/profilePics/malefikus.png
 stars: "5"
 ---

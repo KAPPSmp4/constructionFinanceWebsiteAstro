@@ -1,6 +1,6 @@
 ---
 author: Viktor Kohl
-date: eqw
+date: 21/08/2024
 profile_picture: public/profilePics/viktor-kohl.png
 stars: "5"
 ---

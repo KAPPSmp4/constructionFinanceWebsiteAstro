@@ -39,15 +39,17 @@ const { Content } = await render(review)
 
 <style>
     .review-card {
-        width: 280px;
+        width: 300px;
         background-color: var(--white);
-        max-height: 400px;
+        height: 200px;
+        box-sizing: border-box;
 
         border: 0;
-        border-radius: 24px;
+        border-radius: 20px;
 
-        padding: 16px;
+        padding: 18px;
         overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .heading {
@@ -85,7 +87,7 @@ const { Content } = await render(review)
     }
 
     .content {
-
+        
     }
 
     img {

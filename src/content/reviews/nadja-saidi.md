@@ -1,6 +1,6 @@
 ---
 author: Nadja Saidi
-date: qwe
+date: 23/01/2025
 profile_picture: public/profilePics/nadja-saidi.png
 stars: "5"
 ---
