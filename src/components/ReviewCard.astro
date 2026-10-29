@@ -3,37 +3,41 @@ import type { CollectionEntry } from "astro:content";
 import { render } from "astro:content";
 
 interface Props {
-    review: CollectionEntry<"reviews">
+    review: CollectionEntry<"reviews">;
 }
 
 const { review } = Astro.props;
-const { Content } = await render(review)
+const { Content } = await render(review);
 ---
 
 <div class="review-card">
     <div class="heading">
-        <img src={ review.data.profile_picture } alt="profile picture">
+        <img src={review.data.profile_picture} alt="profile picture" />
 
         <div class="header-info">
-            <p class="author">{ review.data.author }</p>
-            <p class="date">{ review.data.date }</p>
+            <p class="author">{review.data.author}</p>
+            <p class="date">{review.data.date}</p>
         </div>
 
         <div class="google">
-            <img src="public/icons/google_logo.webp" alt="google logo">
+            <img src="public/icons/google_logo.webp" alt="google logo" />
         </div>
     </div>
 
     <div class="rating">
-        <img src="public/icons/star.png" alt="star">
-        <img src="public/icons/star.png" alt="star">
-        <img src="public/icons/star.png" alt="star">
-        <img src="public/icons/star.png" alt="star">
-        <img src="public/icons/star.png" alt="star">
+        <img src="public/icons/star.png" alt="star" />
+        <img src="public/icons/star.png" alt="star" />
+        <img src="public/icons/star.png" alt="star" />
+        <img src="public/icons/star.png" alt="star" />
+        <img src="public/icons/star.png" alt="star" />
     </div>
 
-    <div class="content">
-        <p><Content /></p>
+    <div class="content-section">
+        <div class="content">
+            <Content />
+        </div>
+
+        <button class="read-more">Mehr</button>
     </div>
 </div>
 
@@ -46,15 +50,19 @@ const { Content } = await render(review)
 
         border: 0;
         border-radius: 20px;
-
         padding: 18px;
+
         overflow: hidden;
         text-overflow: ellipsis;
+        transition: height 0.4s ease;
+    }
+
+    .review-card.expanded {
+        height: var(--expanded-height);
     }
 
     .heading {
         display: flex;
-
     }
 
     .header-info {
@@ -81,13 +89,35 @@ const { Content } = await render(review)
         padding: 8px 0px;
     }
 
-    .rating img{
+    .rating img {
         width: auto;
         height: 16px;
     }
 
     .content {
-        
+        max-height: 4.5em; /* 3 lines */
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+    }
+
+    .content.expanded {
+        max-height: var(--full-height);
+        display: block;
+        -webkit-line-clamp: unset;
+        line-clamp: unset;
+    }
+
+    .read-more {
+        display: none;
+        cursor: pointer;
+        margin-top: 8px;
+        color: grey;
+        background-color: var(--white);
     }
 
     img {
@@ -97,13 +127,13 @@ const { Content } = await render(review)
 
     .google {
         height: 38px;
-    
     }
 
-    .google img{
+    .google img {
         height: 100%;
-    
     }
-
-
 </style>
+
+<script>
+    import "./ReviewCard.js";
+</script>

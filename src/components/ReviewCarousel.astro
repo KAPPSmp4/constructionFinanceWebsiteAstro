@@ -2,18 +2,17 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import ReviewCard from "./ReviewCard.astro";
 
-const allReviews: CollectionEntry<"reviews">[] =
-    await getCollection("reviews");
+const allReviews: CollectionEntry<"reviews">[] = await getCollection("reviews");
 
 // Shuffle all reviews randomly
 const shuffledReviews = [...allReviews];
 
 for (let i = shuffledReviews.length - 1; i > 0; i--) {
-  const j = Math.floor(Math.random() * (i + 1));
-  [shuffledReviews[i], shuffledReviews[j]] = [
-    shuffledReviews[j],
-    shuffledReviews[i],
-  ];
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledReviews[i], shuffledReviews[j]] = [
+        shuffledReviews[j],
+        shuffledReviews[i],
+    ];
 }
 
 // Keep only 10
@@ -21,19 +20,23 @@ const reviews = shuffledReviews.slice(0, 10);
 ---
 
 <div class="reviewSection">
-
     <h1>HIER SIND REVIEWS</h1>
 
     <div class="scroller">
         <ul class="review-list scroller__inner">
-            {reviews.map(review => (<li><ReviewCard review={review}/></li>))}
-        </ul> 
+            {
+                reviews.map((review) => (
+                    <li>
+                        <ReviewCard review={review} />
+                    </li>
+                ))
+            }
+        </ul>
     </div>
-        
 </div>
 
 <style>
-    .reviewSection{
+    .reviewSection {
         background-color: var(--blue);
         padding-bottom: 60px;
 
@@ -53,6 +56,9 @@ const reviews = shuffledReviews.slice(0, 10);
         outline: 2px solid red;
     }
 
+    .scroller:hover {
+    }
+
     .scroller__inner {
         padding-block: 2rem;
         display: flex;
@@ -63,14 +69,31 @@ const reviews = shuffledReviews.slice(0, 10);
 
     .scroller[data-animated="true"] {
         overflow: hidden;
-        -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-        mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+        -webkit-mask: linear-gradient(
+            90deg,
+            transparent,
+            white 20%,
+            white 80%,
+            transparent
+        );
+        mask: linear-gradient(
+            90deg,
+            transparent,
+            white 20%,
+            white 80%,
+            transparent
+        );
     }
 
     .scroller[data-animated="true"] .scroller__inner {
         width: fit-content;
         flex-wrap: nowrap;
-        animation: scroll var(--_animation-duration, 90s) var(--_animation-direction, forwards) linear infinite;
+        animation: scroll var(--_animation-duration, 90s)
+            var(--_animation-direction, forwards) linear infinite;
+    }
+
+    .scroller[data-animated="true"]:hover .scroller__inner:hover {
+        animation-play-state: paused;
     }
 
     @keyframes scroll {

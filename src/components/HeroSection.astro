@@ -9,7 +9,7 @@
     </div>
 
     <div class="heroImage">
-        <img src="public/icons/hero.jpeg" alt="">
+        <img src="public/icons/hero.jpeg" alt="" class="foreground-image" />
         <div class="heroBack3"></div>
         <div class="heroBack2"></div>
         <div class="heroBack1"></div>
@@ -17,19 +17,20 @@
 </div>
 
 <style>
-    .heroSection{
-    width: 100%;
-    height: 70vh;
-    background-color: var(--white);
+    .heroSection {
+        width: 100%;
+        height: 70vh;
+        background-color: var(--white);
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        gap: 10rem;
     }
 
     .heading {
         color: var(--black);
-
     }
 
     .heroSection h1 {
@@ -44,10 +45,11 @@
     .heroBack1 {
         height: 500px;
         width: 441px;
-        
-        background-color: var(--blue);
+
+        background-color: #c5e1ef;
 
         position: absolute;
+        z-index: 3;
         top: -10;
         left: 10;
     }
@@ -55,10 +57,11 @@
     .heroBack2 {
         height: 500px;
         width: 441px;
-        
+
         background-color: var(--blue);
 
         position: absolute;
+        z-index: 2;
         top: -20;
         left: 20;
     }
@@ -66,17 +69,21 @@
     .heroBack3 {
         height: 500px;
         width: 441px;
-        
+
         background-color: var(--blue);
 
         position: absolute;
+        z-index: 1;
         top: -30;
         left: 30;
         z-index: 2;
     }
 
-    img {
+    .foreground-image {
         max-height: 500px;
-        z-index: 3;
+        position: relative;
+        z-index: 100;
+
+        display: block;
     }
 </style>
