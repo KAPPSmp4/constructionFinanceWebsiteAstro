@@ -87,7 +87,7 @@
             </div>
 
             <div class="form-step" id="step-5"><!--plz-->
-                <label for="plz">PLZ des Objekts</label>
+                <label for="plz">PLZ des Objekts: </label>
                 <input type="text" id="plz" name="plz" inputmode="numeric" minlength="5" maxlength="5" required>
             </div>
 
@@ -224,6 +224,8 @@ gap: 100px;
     flex-direction: column;
     flex-basis: 750px;
     height: 400px;
+
+    padding: 30px 20px;
 }
 
 h1 {
@@ -288,6 +290,14 @@ input[type="radio"] {
     appearance: none;
 }
 
+input[type="text"] {
+    background-color: var(--grey);
+}
+
+input[type="number"] {
+    background-color: var(--grey);
+}
+
 
 .disabled {
     opacity: 50%;
@@ -302,8 +312,6 @@ input[type="radio"] {
 .btn-row {
     display: flex;
     justify-content: space-evenly;
-
-    flex-basis: 60px;
 }
 
 button {
