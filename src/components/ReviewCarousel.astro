@@ -19,7 +19,7 @@ for (let i = shuffledReviews.length - 1; i > 0; i--) {
 const reviews = shuffledReviews.slice(0, 10);
 ---
 
-<div class="reviewSection">
+<div id="review-section">
     <h1>HIER SIND REVIEWS</h1>
 
     <div class="scroller">
@@ -36,7 +36,8 @@ const reviews = shuffledReviews.slice(0, 10);
 </div>
 
 <style>
-    .reviewSection {
+    #review-section {
+        min-height: 90vh;
         background-color: var(--blue);
         padding-bottom: 60px;
 

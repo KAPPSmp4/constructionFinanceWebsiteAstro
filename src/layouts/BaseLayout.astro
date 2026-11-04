@@ -3,29 +3,31 @@
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<header>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Astro</title>
+    </head>
+    <body>
+        <header>
             <div class="logo">
                 <a href="index.html">LOGO</a>
             </div>
 
             <nav>
                 <ul>
-                    <li><a href="">Element</a></li>
-                    <li><a href="">Element</a></li>
-                    <li><a href="">Element</a></li>
-                    <li><a href="">Element</a></li>
+                    <li><a href="index.html">Baufinanzierung</a></li>
+                    <li><a href="#about-section">Über mich</a></li>
+                    <li><a href="#review-section">Reviews</a></li>
+                    <li><a href="#kontakt-section">Kontakt</a></li>
                 </ul>
+
+                <a href="#lead-section" class="button cta">TEST</a>
             </nav>
         </header>
 
-        <slot></slot>
+        <slot />
 
         <footer>
             <small>
@@ -35,21 +37,11 @@
             <nav class="cookies">
                 <ul>
                     <li><a href="impressum.html">Impressum</a></li>
-                    <li>Datenschutz</li>
-                    <li>AGB</li>
-                    <li>Barrierefreiheit</li>
-                    <li>copyright</li>
-                </ul>
-            </nav>
-
-            <nav class="socials">
-                <ul>
-                    <li>Insta</li>
-                    <li>blabla</li>
+                    <li><a href="datenschutz.html">Datenschutz</a></li>
                 </ul>
             </nav>
         </footer>
-	</body>
+    </body>
 </html>
 
 <style>
@@ -58,15 +50,25 @@
         background-color: var(--white);
         color: var(--black);
         align-items: center;
-        justify-content:space-evenly;
-        padding: 32px 0px;
+        justify-content: space-evenly;
+        padding: 16px 0px;
         border-bottom: 2px solid var(--grey);
         font-weight: 600;
         font-size: 20px;
+
+        position: sticky;
+        top: 0;
+        z-index: 1000;
     }
 
     .logo img {
         height: 45px;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
     }
 
     ul {
@@ -81,12 +83,16 @@
         color: inherit;
     }
 
+    .cta {
+        color: var(--white);
+    }
+
     footer {
         display: flex;
         background-color: var(--blue);
         color: var(--white);
         align-items: center;
-        justify-content:space-evenly;
+        justify-content: space-evenly;
         padding: 32px 0px;
         border-top: 2px solid var(--grey);
     }
@@ -98,8 +104,8 @@
         --white: #fff;
         --grey: #f0f0f0;
 
-        --blue: #1F3667;
-        --orange: #DD7513;
+        --blue: #1f3667;
+        --orange: #dd7513;
     }
 
     body {
@@ -107,9 +113,72 @@
         font-family: Arial, Helvetica, sans-serif;
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
     * {
         border: none;
         margin: 0;
         padding: 0;
+    }
+
+    button,
+    .button {
+        background-color: var(--orange);
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+
+        min-width: 90px;
+        height: 40px;
+
+        border: 0;
+        border-radius: 100px;
+        box-sizing: border-box;
+
+        cursor: pointer;
+
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 20px;
+        max-width: 480px;
+        min-height: 40px;
+        min-width: 0px;
+        overflow: hidden;
+        padding: 0px;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
+        touch-action: manipulation;
+        transition:
+            background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+            box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+            color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+        user-select: none;
+        -webkit-user-select: none;
+        vertical-align: middle;
+    }
+
+    button:hover,
+    button:focus,
+    .button:focus,
+    .button:hover {
+        background-color: #c5660f;
+        color: var(--white);
+    }
+
+    button:active,
+    .button:active {
+        background: #ad560c;
+        color: rgb(255, 255, 255, 0.7);
+    }
+
+    button:disabled,
+    .button:disabled {
+        cursor: not-allowed;
+        background: rgba(0, 0, 0, 0.08);
+        color: rgba(0, 0, 0, 0.3);
     }
 </style>

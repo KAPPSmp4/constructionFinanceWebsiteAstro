@@ -1,8 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HeroSection from "../components/HeroSection.astro";
-import LeadSection from "../components/LeadSection.astro"
+import LeadSection from "../components/LeadSection.astro";
 import ReviewCarousel from "../components/ReviewCarousel.astro";
+import KontaktSection from "../components/KontaktSection.astro";
+import AboutSection from "../components/AboutSection.astro";
 ---
 
 <html lang="en">
@@ -17,15 +19,15 @@ import ReviewCarousel from "../components/ReviewCarousel.astro";
 
 	<body>
 		<BaseLayout>
-			
-			<HeroSection></HeroSection>
+			<HeroSection />
 
-			<LeadSection></LeadSection>
+			<LeadSection />
 
-			<HeroSection></HeroSection>
+			<AboutSection />
 
-			<ReviewCarousel></ReviewCarousel>
-			
+			<ReviewCarousel />
+
+			<KontaktSection />
 		</BaseLayout>
 	</body>
 </html>

@@ -18,18 +18,21 @@ function sendMessage() {
         livingArea: document.getElementById("livingArea").value,                                //number
         status: document.querySelector("input[name='status']:checked")?.value,                  //radio
         borrower: document.querySelector("input[name='borrower']:checked")?.value,              //radio
-        
+
     }
 
     emailjs.send(serviceID, templateID, params)
-    .then(response => console.log("SUCCESS" + response.status))
-    .catch(error => console.log("Error:", error)
-    )
+        .then(response => console.log("SUCCESS" + response.status))
+        .catch(error => console.log("Error:", error)
+        )
 }
 
 let formIndex = 0;
 
-const form = document.querySelector("#leadForm");
+const form = document.querySelector("#lead-form");
+
+const progress = document.querySelector(".progress");
+let progressValue = 0;
 
 form?.addEventListener('submit', event => {
     event.preventDefault();
@@ -51,6 +54,7 @@ function formContinue() {
     }
 
     updateContinueButton();
+    updateProgressBar("increase");
 }
 
 function formReturn() {
@@ -63,6 +67,18 @@ function formReturn() {
     }
 
     updateContinueButton();
+    updateProgressBar("reduce");
+}
+
+function updateProgressBar(string) {
+    if (string == "increase") {
+        progressValue += 10;
+    }
+
+    if (string == "reduce") {
+        progressValue -= 10;
+    }
+    progress.querySelector(".progress-fill").style.width = `${progressValue}%`;
 }
 
 //---------------------- AI BRO CORNER (SHAME SHAME SHAME)---------------------------//
@@ -73,8 +89,8 @@ function validateStep(stepElement) {
     return [...inputs].every(input => input.checkValidity());
 }
 
-const nextButton = document.querySelector("#nextButton");
-const returnButton = document.querySelector("#returnButton");
+const nextButton = document.querySelector("#next-button");
+const returnButton = document.querySelector("#return-button");
 
 nextButton.addEventListener("click", formContinue)
 returnButton.addEventListener("click", formReturn)
